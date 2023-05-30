@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IProduct } from 'src/app/interface/Product';
-import { ProductService } from 'src/app/services/product.service';
+import { IProduct } from 'src/app/interface/product';
+import { ServiceService } from 'src/app/service/service.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,22 +8,15 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent {
-  products!: IProduct[]
-
-  constructor(private productService: ProductService) {
-    this.productService.getProducts().subscribe(data => {
-      this.products = data
-    }, error => {
-      console.log(error.message)
-    })
+  products: IProduct[] = [];
+  constructor(private productService: ServiceService) {
+    this.productService.getProducts().subscribe(data => { this.products = data })
   }
-  removeItem(id: any) {
-    const confirm = window.confirm("may co muon xoa ko")
-    if (confirm) {
-      this.productService.deleteProduct(id).subscribe(() => {
-        this.products = this.products.filter(item => item.id !== id)
-      })
-    }
-
+  remove(id: any) {
+    this.productService.deleteProducts(id).subscribe(() => {
+      console.log("Xoá thành công")
+      this.products = this.products.filter((product) => product
+        .id != id)
+    })
   }
 }

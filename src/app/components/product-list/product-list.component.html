@@ -1,29 +1,23 @@
-<div class="container">
-
-    <hr />
-    <table class="table table-bordered">
+<div class="table table-bordered">
+    <table>
         <thead>
             <tr>
                 <th>STT</th>
-                <th>Ảnh</th>
-                <th>Tên sản phẩm</th>
+
+                <th>Tên</th>
                 <th>Giá</th>
-                <th></th>
+                <th>Thao tác</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products; index as i">
-                <td>{{ i + 1 }}</td>
-                <td><img [src]="product.img"> </td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.price }}</td>
+            <tr *ngFor="let product of products,index as i">
+                <td>{{ i+1}}</td>
+                <td>{{ product.name}}</td>
+                <td>{{ product.price}}</td>
                 <td>
-                    <button class="btn btn-danger" (click)="removeItem(product.id)!">
-                        Xóa
-                    </button>
-                    <button class="btn btn-danger" routerLink="/admin/product/{{product.id}}/edit">
-                        edit
-                    </button>
+                    <button class="btn btn-danger" (click)="remove(product.id)!">Xoá</button>
+                    <button class="btn btn-danger" routerLink="/admin/produc/">Sửa</button>
+
                 </td>
             </tr>
         </tbody>

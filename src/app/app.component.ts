@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IProduct } from './interface/Product';
+
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,3 @@ export class AppComponent {
 
 }
 
-
-// Logic, View, Stylesheet
-// .ts, .html, .scss
-
-
-// function HelloComponent(){
-
-// }
-
-// <HelloComponent />

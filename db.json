@@ -1,34 +1,10 @@
 {
   "products": [
     {
-      "id": 6,
-      "name": "Product Bc",
-      "price": 300,
-      "img": "anh"
-    },
-    {
-      "id": 8,
+      "id": 3,
       "name": "Product C",
       "price": 400,
       "img": "anh"
-    },
-    {
-      "id": 9,
-      "name": "Product B",
-      "price": 300,
-      "img": "anh"
-    },
-    {
-      "id": 10,
-      "name": "Product C",
-      "price": 400,
-      "img": "anh"
-    },
-    {
-      "name": "Du An 2",
-      "price": 5,
-      "img": "adsds",
-      "id": 11
     }
   ]
 }
